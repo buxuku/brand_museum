@@ -1,4 +1,15 @@
 <?php
+require("common/db_config.php");
+
+$conn=mysql_connect($mysql_server_name,$mysql_username,$mysql_password) or die("error connecting") ; //
+mysql_query("set names 'utf8'");
+mysql_select_db($mysql_database);
+$sql ="select * from brand ";
+$result = mysql_query($sql,$conn); 
+while($row = mysql_fetch_array($result)){
+    echo $row["logo_path"];
+}
+
 $file = 'brand.txt'; 
 $content = file_get_contents($file); 
 
