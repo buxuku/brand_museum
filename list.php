@@ -1,5 +1,5 @@
 <?php
-$file = 'a.txt'; 
+$file = 'brand.txt'; 
 $content = file_get_contents($file); 
 
 $array = explode("\r\n", $content); 
