@@ -24,10 +24,20 @@ function getStoreDivided($price,$settlement,$ratio){
 }
 
 $sql="SELECT c.id, c.`name`, c.price, c.tag_price, c.ratio, c.settlement, pic.goods_pics, b.show_name FROM commodity AS c LEFT JOIN ( SELECT GROUP_CONCAT(p.path) AS goods_pics, p.commodity_id AS goods_id FROM goods_pictures AS p WHERE p.type = 'goods' GROUP BY p.commodity_id ) AS pic ON pic.goods_id = c.id LEFT JOIN brand AS b ON c.brand_id = b.id WHERE c.id IN (".$brandList[$brand_id].")";
-$result = mysql_query($sql,$conn); 
+$result = mysql_query($sql,$conn);
+$goosList=array();
 while($row = mysql_fetch_array($result)){
-	echo getStoreDivided($row['price'],$row['settlement'],$row['ratio'])."<br/>";
+	$goodsList[]=array(
+		"id"=>$row['id'],
+		"name"=>$row['name'],
+		"price"=>$row['price'],
+		"tag_price"=>$row['tag_price'],
+		"goods_pics"=>explode(",", $row['goods_pics']),
+		"StoreDivided"=>getStoreDivided($row['price'],$row['settlement'],$row['ratio']),
+		"brand_name"=>$row['show_name']
+	);
 }
+print_r($goodsList);
 ?>
 <!DOCTYPE html>
 <html>
