@@ -16,11 +16,11 @@ mysql_select_db($mysql_database);
      		<p><?php echo $key?></p>
             <?php
                 $brandGruop = implode(",", $value);
-                $sql ="select * from brand where 1 and id IN (".$brandGruop.")";
+                $sql ="select id,logo_path,show_name from brand where 1 and id IN (".$brandGruop.")";
                 $result = mysql_query($sql,$conn); 
                 while($row = mysql_fetch_array($result)){
                 ?>
-                    <a href="goods_list.php?brand_id=<?php echo $row['id'] ?>">2222</a>
+                    <a href="goods_list.php?brand_id=<?php echo $row['id'] ?>"><?php echo $row['show_name'] ?></a>
                 <?php }
             ?>
      	<?php } ?>
