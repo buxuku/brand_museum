@@ -9,10 +9,24 @@ $conn=mysql_connect($mysql_server_name,$mysql_username,$mysql_password) or die("
 mysql_query("set names 'utf8'");
 mysql_select_db($mysql_database);
 
+function getStoreDivided($price,$settlement,$ratio){
+	$storeDivided=0;
+	switch ($settlement) {
+		case 1:
+			$storeDivided=$price*($ratio*0.01-0.025);
+			break;
+		
+		default:
+			$storeDivided=$ratio*(1-0.05);
+			break;
+	}
+	return $storeDivided;
+}
+
 $sql="SELECT c.id, c.`name`, c.price, c.tag_price, c.ratio, c.settlement, pic.goods_pics, b.show_name FROM commodity AS c LEFT JOIN ( SELECT GROUP_CONCAT(p.path) AS goods_pics, p.commodity_id AS goods_id FROM goods_pictures AS p WHERE p.type = 'goods' GROUP BY p.commodity_id ) AS pic ON pic.goods_id = c.id LEFT JOIN brand AS b ON c.brand_id = b.id WHERE c.id IN (".$brandList[$brand_id].")";
 $result = mysql_query($sql,$conn); 
 while($row = mysql_fetch_array($result)){
-	echo $row['name'];
+	echo getStoreDivided($row['price'],$row['settlement'],$row['ratio'])."<br/>";
 }
 ?>
 <!DOCTYPE html>
