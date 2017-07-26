@@ -1,4 +1,5 @@
 <?php
+require("db_config.php");
 $file = 'brand.txt'; 
 $content = file_get_contents($file); 
 

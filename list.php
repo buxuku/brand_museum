@@ -1,5 +1,4 @@
 <?php
-require("common/db_config.php");
 require("common/init.php");
 $conn=mysql_connect($mysql_server_name,$mysql_username,$mysql_password) or die("error connecting") ; //
 mysql_query("set names 'utf8'");
