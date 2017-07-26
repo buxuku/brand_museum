@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require("common/init.php");
 $conn=mysql_connect($mysql_server_name,$mysql_username,$mysql_password) or die("error connecting") ; //
 mysql_query("set names 'utf8'");
@@ -20,7 +20,7 @@ mysql_select_db($mysql_database);
                 $result = mysql_query($sql,$conn); 
                 while($row = mysql_fetch_array($result)){
                 ?>
-                    <a href="goods_list.php?brand_id=<?php echo $row['id'] ?>"><?php echo $row['show_name'] ?></a>
+                    <a href="goods_list.php?brand_id=<?php echo $row['id'] ?>&brand_name=<?php echo $row['show_name'] ?>"><?php echo $row['show_name'] ?></a>
                 <?php }
             ?>
      	<?php } ?>

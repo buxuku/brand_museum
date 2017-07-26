@@ -1,6 +1,7 @@
-<?php
+﻿<?php
 require("common/init.php");
 $brand_id = intval($_GET['brand_id']);
+$brand_name = $_GET['brand_name'];
 if(!$brand_id){
 	die("brand_id非法");
 }
@@ -13,3 +14,12 @@ $result = mysql_query($sql,$conn);
 while($row = mysql_fetch_array($result)){
 	echo $row['name'];
 }
+?>
+<!DOCTYPE html>
+<html>
+     <head>
+         <title><?php echo $brand_name ?></title>
+     </head>
+     <body>
+     </body>
+</html>
