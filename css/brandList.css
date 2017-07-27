@@ -101,9 +101,6 @@ a:visited{
 .gaia-table-view .mui-card-content{
 	line-height: 0px;
 }
-.gaia-table-view .mui-indexed-list-item img{
-	width: 100%; 
-}
 .gaia-table-view .gaia-card-footer{
 	padding: 0px;
 	font-size: 12px;

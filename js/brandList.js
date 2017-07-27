@@ -10,16 +10,6 @@ mui.ready(function() {
 			//calc hieght
 			list.style.height = (document.body.offsetHeight /*- header.offsetHeight*/) + 'px';
 			
-			/*设置img高度*/
-			var listImg=document.querySelectorAll(".gaia-table-view .mui-card-content img");
-			var listImgContent=document.querySelectorAll(".gaia-table-view .mui-card-content");
-			listImg.forEach(function(item){
-				item.style.height=listImg.offsetWidth+'px';
-			});
-			listImgContent.forEach(function(item){
-				item.style.height=listImg.offsetWidth+'px';
-			})
-			
 			/*设置整体*/
 			var listHeight=list.offsetHeight;
 			var searchHeight=document.querySelector('.gaia-indexed-list-search').offsetHeight;
@@ -31,7 +21,7 @@ mui.ready(function() {
 			inner.style.height = withoutSearchHeight;
 			bar.style.height = (listHeight- searchHeight - 100)+'px';
 			var barItemHeight = ((listHeight- searchHeight - 140) / barItem.length) + 'px';
-			console.log(bar);
+			/*console.log(bar);*/
 			barItem.forEach(function(item) {
 				item.style.height = barItemHeight;
 				item.style.lineHeight = barItemHeight;
@@ -39,11 +29,22 @@ mui.ready(function() {
 			
 			var barWidth=(bar.offsetWidth+2);
 			var cardItem=document.querySelectorAll(".gaia-table-view .mui-indexed-list-item");
-			console.log((document.body.offsetWidth-barWidth)/3);
+			/*console.log((document.body.offsetWidth-barWidth)/3);*/
 			cardItem.forEach(function(item){
 				item.style.width=(document.body.offsetWidth-barWidth)/3+'px';
 				item.style.padding=(document.body.offsetWidth-barWidth)/60+'px';
 			})
+			
+			/*设置img外框大小和img大小*/
+			var cardContent=document.querySelectorAll(".gaia-table-view .mui-card-content");
+			cardContent.forEach(function(item){
+				item.style.height=item.offsetWidth+'px';
+			});
+			var cardImg=document.querySelectorAll(".gaia-table-view .mui-card-content img");
+			cardImg.forEach(function(item){
+				item.style.width=cardContent[0].offsetWidth+'px';
+				item.style.height=cardContent[0].offsetWidth+'px';
+			});
 	}
 	window.onresize=listHeight;
 });
