@@ -1,6 +1,6 @@
 ﻿<?php
 require("common/init.php");
-$conn=mysql_connect($mysql_server_name,$mysql_username,$mysql_password) or die("error connecting") ; //
+$conn=mysql_connect($mysql_server_name,$mysql_username,$mysql_password) or die("error connecting");
 mysql_query("set names 'utf8'");
 mysql_select_db($mysql_database);
 ?>
@@ -38,7 +38,7 @@ mysql_select_db($mysql_database);
                         <?php
                             foreach($brand as $key=>$value){
                         ?>
-                            <li data-group="<?php echo $key?>" class="mui-table-view-divider mui-indexed-list-group"><?php echo $key?></li>
+                            <li data-group="<?php echo $key ?>" class="mui-table-view-divider mui-indexed-list-group"><?php echo $key ?></li>
                             <?php
                                 $brandGruop = implode(",", $value);
                                 $sql ="select id,logo_path,show_name from brand where 1 and id IN (".$brandGruop.")";
