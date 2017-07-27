@@ -28,14 +28,12 @@
 	color: black;
 }
 .gaia-footer-badge{
-	position: absolute;
-	top: 11px;
+	margin-right: 1em;
 	color: white;
 	background-color: #4184FF;
 	border-radius: 4px;
 }
 .gaia-footer-title{
-	padding-left: 60px;
 	margin-bottom: 0px;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -62,7 +60,6 @@
 	}
 	.gaia-footer-title{
 		line-height: 28px;
-    	padding-left: 80px;
 	}
 	.gaia-footer-prices{
 		padding:10px 0px;
@@ -76,7 +73,6 @@
 	}
 	.gaia-footer-title{
 		line-height: 26px;
-    	padding-left: 70px;
 	}
 	.gaia-footer-prices{
 		padding:5px 0px;
@@ -90,7 +86,6 @@
 	}
 	.gaia-footer-title{
 		line-height: 24px;
-    	padding-left: 60px;
 	}
 	.gaia-footer-prices{
 		padding:2px 0px 0px;
