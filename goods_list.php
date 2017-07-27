@@ -73,8 +73,9 @@ if(count($goodsList)==0){
 							<?php } ?>
 						</div>
 						<div class="mui-card-footer">
-							<span class="mui-badge gaia-footer-badge"><?php echo $value['brand_name'] ?></span>
-							<p class="gaia-footer-title"><?php echo $value['name'] ?></p>
+							<p class="gaia-footer-title">
+								<span class="mui-badge gaia-footer-badge"><?php echo $value['brand_name'] ?></span>
+								<?php echo $value['name'] ?></p>
 							<div class="mui-row gaia-footer-prices">
 								<div class="mui-col-xs-4 price1">直营价:￥<?php echo round($value['price'],2) ?></div>
 								<div class="mui-col-xs-4 price2">利润:￥<?php echo round($value['StoreDivided'],2) ?></div>
