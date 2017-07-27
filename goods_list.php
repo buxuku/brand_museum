@@ -25,7 +25,7 @@ function getStoreDivided($price,$settlement,$ratio){
 
 $sql="SELECT c.id, c.`name`, c.price, c.tag_price, c.ratio, c.settlement, pic.goods_pics, b.show_name FROM commodity AS c LEFT JOIN ( SELECT GROUP_CONCAT(p.path) AS goods_pics, p.commodity_id AS goods_id FROM goods_pictures AS p WHERE p.type = 'goods' GROUP BY p.commodity_id ) AS pic ON pic.goods_id = c.id LEFT JOIN brand AS b ON c.brand_id = b.id WHERE c.id IN (".$brandList[$brand_id].")";
 $result = mysql_query($sql,$conn);
-$goosList=array();
+$goodsList=array();
 while($row = mysql_fetch_array($result)){
 	$goodsList[]=array(
 		"id"=>$row['id'],
@@ -36,6 +36,9 @@ while($row = mysql_fetch_array($result)){
 		"StoreDivided"=>getStoreDivided($row['price'],$row['settlement'],$row['ratio']),
 		"brand_name"=>$row['show_name']
 	);
+}
+if(count($goodsList)==0){
+	die("暂无数据！");
 }
 ?>
 <!DOCTYPE html>
@@ -54,7 +57,6 @@ while($row = mysql_fetch_array($result)){
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left
 				gaia-action-back"></a>
 			<h1 class="mui-title"><?php echo $brand_name ?></h1>
-			<!--<a class="mui-icon gaia-icon-shopping mui-pull-right"></a>-->
 		</header>
 		<div class="mui-content gaia-brandDetail-content">
 			<?php foreach($goodsList as $value){
@@ -74,9 +76,9 @@ while($row = mysql_fetch_array($result)){
 							<span class="mui-badge gaia-footer-badge"><?php echo $value['brand_name'] ?></span>
 							<p class="gaia-footer-title"><?php echo $value['name'] ?></p>
 							<div class="mui-row gaia-footer-prices">
-								<div class="mui-col-xs-4 price1">直营价:￥<?php echo $value['price'] ?></div>
-								<div class="mui-col-xs-4 price2">利润:￥<?php echo $value['StoreDivided'] ?></div>
-								<div class="mui-col-xs-4 price3">吊牌价:￥<?php echo $value['tag_price'] ?></div>
+								<div class="mui-col-xs-4 price1">直营价:￥<?php echo round($value['price'],2) ?></div>
+								<div class="mui-col-xs-4 price2">利润:￥<?php echo round($value['StoreDivided'],2) ?></div>
+								<div class="mui-col-xs-4 price3">吊牌价:￥<?php echo round($value['tag_price'],2) ?></div>
 							</div>
 						</div>
 					</a>
