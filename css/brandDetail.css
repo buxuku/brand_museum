@@ -1,0 +1,99 @@
+.gaia-action-back,
+.gaia-icon-shopping{
+	color:#515151;
+}
+.mui-icon.gaia-icon-shopping{
+	padding: 12px 10px;
+	font-size: 20px;
+}
+.gaia-brandDetail-content .mui-card{
+	margin: 0px 0px 10px 0px;
+}
+.gaia-brandDetail-content>.mui-card:first-child{
+	margin-top: 0px;
+}
+.gaia-brandDetail-content .mui-card-content{
+	padding: 15px 13px 0px 13px;
+	font-size: 0px;
+	line-height: 0px;
+}
+.gaia-brandDetail-content .mui-card-content img{
+	margin: 0px 2px;
+}
+.gaia-brandDetail-content .mui-card-footer:before{
+	height: 0;
+}
+.gaia-brandDetail-content .mui-card-footer{
+	display: block;
+	color: black;
+}
+.gaia-footer-badge{
+	position: absolute;
+	top: 11px;
+	color: white;
+	background-color: #4184FF;
+	border-radius: 4px;
+}
+.gaia-footer-title{
+	padding-left: 60px;
+	margin-bottom: 0px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 14px;
+	color: black;
+}
+.gaia-footer-prices{
+	font-size: 11px;
+}
+.gaia-footer-prices .price1{
+	text-align: left;
+}
+.gaia-footer-prices .price2{
+	text-align: center;
+}
+.gaia-footer-prices .price3{
+	text-align: right;
+}
+@media only screen and (min-width: 992px) {
+	.gaia-footer-badge,
+	.gaia-footer-title{
+		font-size: 18px;
+	}
+	.gaia-footer-title{
+		line-height: 28px;
+    	padding-left: 80px;
+	}
+	.gaia-footer-prices{
+		padding:10px 0px;
+		font-size: 16px;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.gaia-footer-badge,
+	.gaia-footer-title{
+		font-size: 16px;
+	}
+	.gaia-footer-title{
+		line-height: 26px;
+    	padding-left: 70px;
+	}
+	.gaia-footer-prices{
+		padding:5px 0px;
+		font-size: 14px;
+	}
+}
+@media only screen and (min-width: 360px) and (max-width: 767px) {
+	.gaia-footer-badge,
+	.gaia-footer-title{
+		font-size: 14px;
+	}
+	.gaia-footer-title{
+		line-height: 24px;
+    	padding-left: 60px;
+	}
+	.gaia-footer-prices{
+		padding:2px 0px 0px;
+		font-size: 12px;
+	}
+}

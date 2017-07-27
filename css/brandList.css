@@ -1,0 +1,118 @@
+html,
+body {
+	height: 100%;
+	overflow: hidden;
+}
+.mui-bar {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+a,
+a:hover,
+a:visited{
+	color:black;
+}
+/*搜索框*/
+.gaia-indexed-list-search{
+	background-color: #F6F6F6;
+	border-bottom-color: #EEEEEE ;
+}
+.gaia-indexed-list-search .mui-placeholder {
+	height: 44px;
+	line-height: 44px;
+	color:#515151;
+}
+.gaia-indexed-list-search .mui-placeholder .mui-icon{
+	float: right;
+	padding: 12px 14px;
+	color: black;
+    font-weight: bold;
+}
+.gaia-indexed-list-search .mui-icon.mui-icon-clear{
+	display: none;
+}
+.gaia-indexed-list-search.mui-active{
+	position: relative;
+}
+.gaia-indexed-list-search.mui-active:before{
+	position: absolute;
+	display: inline-block;
+	left: auto;
+	right: 14px;
+	color: black;
+    font-weight: bold;
+}
+.gaia-action-back{
+	position: absolute;
+	z-index: 16;
+	padding: 10px 10px;
+	color: #515151;
+}
+.gaia-action-back:active{
+	color:#898989;
+}
+.gaia-indexed-list-search input[type=search]{
+	height: 44px;
+	padding-left: 60px;
+}
+/*索引条*/
+.gaia-indexed-list-bar,
+.gaia-indexed-list-bar.active{
+	right: 2px;
+	margin-top: 30px;
+	padding: 5px 0px 35px;
+	text-align: center;
+	background-color: rgba(255,255,255,0.3);
+	border-radius: 40px;
+	border: 1px solid #DEDEDE;
+}
+
+.gaia-indexed-list-bar:before{
+	content: "#";
+	font-size: 12px;
+	color: rgb(126,126,126);
+}
+.gaia-indexed-list-bar a{
+	color: rgb(126,126,126);
+}
+/*内容列表*/
+.gaia-table-view{
+	font-size: 0px;
+}
+.gaia-table-view .mui-table-view-divider{
+	color:#313131;
+	font-size: 17px;
+}
+.gaia-table-view .mui-table-view-divider:before,
+.gaia-table-view .mui-table-view-divider:after{
+	background-color: #EEEEEE ;
+}
+.gaia-table-view .mui-indexed-list-item{
+	background-color: white;
+	padding: 0px;
+	display: inline-block;
+}
+.gaia-table-view .mui-indexed-list-item:after{
+	height: 0px;
+}
+.gaia-table-view .mui-card{
+	margin: 0px;
+}
+.gaia-table-view .mui-card-content{
+	line-height: 0px;
+}
+.gaia-table-view .mui-indexed-list-item img{
+	width: 100%; 
+}
+.gaia-table-view .gaia-card-footer{
+	padding: 0px;
+	font-size: 12px;
+	padding: 0.2rem 0px;
+	text-align: center;
+}
+@media only screen and (min-width: 640px){
+	.gaia-table-view .gaia-card-footer{
+		font-size: 16px;
+		padding: 0.5rem 0px;
+	}
+}
