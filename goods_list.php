@@ -67,7 +67,7 @@ while($row = mysql_fetch_array($result)){
 									break;
 								}
 							?>
-							<img src="<?php echo $img; ?>"/>
+							<img src="<?php echo IMG_PREFIX.$img; ?>"/>
 							<?php } ?>
 						</div>
 						<div class="mui-card-footer">

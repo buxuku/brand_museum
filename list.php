@@ -25,32 +25,11 @@ mysql_select_db($mysql_database);
 						placeholder="品牌馆">
 				</div>
 				<div class="mui-indexed-list-bar gaia-indexed-list-bar">
-					<a>A</a>
-					<a>B</a>
-					<a>C</a>
-					<a>D</a>
-					<a>E</a>
-					<a>F</a>
-					<a>G</a>
-					<a>H</a>
-					<a>I</a>
-					<a>J</a>
-					<a>K</a>
-					<a>L</a>
-					<a>M</a>
-					<a>N</a>
-					<a>O</a>
-					<a>P</a>
-					<a>Q</a>
-					<a>R</a>
-					<a>S</a>
-					<a>T</a>
-					<a>U</a>
-					<a>V</a>
-					<a>W</a>
-					<a>X</a>
-					<a>Y</a>
-					<a>Z</a>
+					<?php
+                        foreach($brand as $key=>$value){
+                    ?>
+                        <a><?php echo $key ?>
+                    <?php } ?>
 				</div>
 				<div class="mui-indexed-list-alert"></div>
 				<div class="mui-indexed-list-inner">
@@ -70,7 +49,7 @@ mysql_select_db($mysql_database);
                                             <div class="mui-card">
                                                 <a href="goods_list.php?brand_id=<?php echo $row['id'] ?>&brand_name=<?php echo $row['show_name'] ?>">
                                                     <div class="mui-card-content">
-                                                        <img src="<?php echo $row['logo_path'] ?>"/>
+                                                        <img src="<?php echo IMG_PREFIX.$row['logo_path'] ?>"/>
                                                     </div>
                                                     <div class="gaia-card-footer"><?php echo $row['show_name'] ?></div>
                                                 </a>

@@ -1,5 +1,6 @@
 <?php
 require("db_config.php");
+define("IMG_PREFIX","//uploaded.gaiasys.cn/retail/images/");
 $file = 'brand.txt'; 
 $content = file_get_contents($file); 
 
