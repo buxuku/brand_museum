@@ -4,7 +4,7 @@ define("IMG_PREFIX","//uploaded.gaiasys.cn/retail/images/");
 $file = 'brand.txt'; 
 $content = file_get_contents($file); 
 
-$array = explode("\r\n", $content); 
+$array = explode("\n", $content); 
 $brand = array();
 $brandList=array();
 for($i=0; $i<count($array); $i++) 
