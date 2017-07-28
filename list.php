@@ -1,8 +1,8 @@
 ﻿<?php
 require("common/init.php");
-$conn=mysql_connect($mysql_server_name,$mysql_username,$mysql_password) or die("error connecting");
-mysql_query("set names 'utf8'");
-mysql_select_db($mysql_database);
+$conn=mysqli_connect($mysql_server_name,$mysql_username,$mysql_password) or die("error connecting");
+mysqli_query("set names 'utf8'");
+mysqli_select_db($mysql_database);
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,8 +42,8 @@ mysql_select_db($mysql_database);
                             <?php
                                 $brandGruop = implode(",", $value);
                                 $sql ="select id,logo_path,show_name from brand where 1 and id IN (".$brandGruop.")";
-                                $result = mysql_query($sql,$conn); 
-                                while($row = mysql_fetch_array($result)){
+                                $result = mysqli_query($sql,$conn); 
+                                while($row = mysqli_fetch_array($result)){
                                 ?>
                                     <li class="mui-table-view-cell mui-indexed-list-item">
                                             <div class="mui-card">
