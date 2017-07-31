@@ -1,6 +1,6 @@
 ﻿<?php
 require("common/init.php");
-$conn=mysqli_connect($mysql_server_name,$mysql_username,$mysql_password,$mysql_database) or die("error connecting");
+$conn=mysqli_connect($mysql_server_name,$mysql_username,$mysql_password,$mysql_database,$mysql_port) or die("error connecting");
 mysqli_query($conn,'set names utf8');
 ?>
 <!DOCTYPE html>

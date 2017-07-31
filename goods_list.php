@@ -5,7 +5,7 @@ $brand_name = $_GET['brand_name'];
 if(!$brand_id){
 	die("brand_id非法");
 }
-$conn=mysqli_connect($mysql_server_name,$mysql_username,$mysql_password,$mysql_database) or die("error connecting");
+$conn=mysqli_connect($mysql_server_name,$mysql_username,$mysql_password,$mysql_database,$mysql_port) or die("error connecting");
 mysqli_query($conn,'set names utf8');
 
 function getStoreDivided($price,$settlement,$ratio){
