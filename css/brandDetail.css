@@ -18,6 +18,10 @@
 	line-height: 0px;
 	overflow: hidden;
 }
+.gaia-brandDetail-content .gaia-card-img-box{
+	display: inline-block;
+	overflow: hidden;
+}
 .gaia-brandDetail-content .mui-card-content img{
 	margin: 0px 2px;
 }

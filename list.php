@@ -71,5 +71,10 @@ mysqli_query($conn,'set names utf8');
 		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/mui.indexedlist.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/brandList.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		    document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1262566772'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol
+		            + "s13.cnzz.com/z_stat.php%3Fid%3D1262566772' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 	</body>
 </html>
