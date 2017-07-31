@@ -102,6 +102,9 @@ a:visited{
 	line-height: 0px;
 	overflow: hidden;
 }
+.gaia-table-view .mui-card-content img{
+	visibility: hidden;
+}
 .gaia-table-view .gaia-card-footer{
 	padding: 0px;
 	font-size: 12px;
