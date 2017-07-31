@@ -24,6 +24,9 @@ function getStoreDivided($price,$settlement,$ratio){
 
 $sql="SELECT c.id, c.`name`, c.price, c.tag_price, c.ratio, c.settlement, pic.goods_pics, b.show_name FROM commodity AS c LEFT JOIN ( SELECT GROUP_CONCAT(p.path) AS goods_pics, p.commodity_id AS goods_id FROM goods_pictures AS p WHERE p.type = 'goods' GROUP BY p.commodity_id ) AS pic ON pic.goods_id = c.id LEFT JOIN brand AS b ON c.brand_id = b.id WHERE c.id IN (".$brandList[$brand_id].")";
 $result = mysqli_query($conn,$sql);
+if(!$result){
+	die("未查询到相关数据!");
+}
 $goodsList=array();
 while($row = mysqli_fetch_array($result)){
 	$goodsList[]=array(

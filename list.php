@@ -40,21 +40,28 @@ mysqli_query($conn,'set names utf8');
                             <li data-group="<?php echo $key ?>" class="mui-table-view-divider mui-indexed-list-group"><?php echo $key ?></li>
                             <?php
                                 $brandGruop = implode(",", $value);
+								if(!$brandGruop){
+									die("该品牌下暂无商品！");
+								}
                                 $sql ="select id,logo_path,show_name from brand where 1 and id IN (".$brandGruop.")";
-                                $result = mysqli_query($conn,$sql); 
-                                while($row = mysqli_fetch_array($result)){
-                                ?>
-                                    <li class="mui-table-view-cell mui-indexed-list-item">
-                                            <div class="mui-card">
-                                                <a href="goods_list.php?brand_id=<?php echo $row['id'] ?>&brand_name=<?php echo $row['show_name'] ?>">
-                                                    <div class="mui-card-content">
-                                                        <img src="<?php echo IMG_PREFIX.$row['logo_path'] ?>"/>
-                                                    </div>
-                                                    <div class="gaia-card-footer"><?php echo $row['show_name'] ?></div>
-                                                </a>
-                                            </div>
-                                    </li>
-                                <?php }
+                                $result = mysqli_query($conn,$sql);
+								if($result){
+									while($row = mysqli_fetch_array($result)){
+									?>
+										<li class="mui-table-view-cell mui-indexed-list-item">
+												<div class="mui-card">
+													<a href="goods_list.php?brand_id=<?php echo $row['id'] ?>&brand_name=<?php echo $row['show_name'] ?>">
+														<div class="mui-card-content">
+															<img src="<?php echo IMG_PREFIX.$row['logo_path'] ?>"/>
+														</div>
+														<div class="gaia-card-footer"><?php echo $row['show_name'] ?></div>
+													</a>
+												</div>
+										</li>
+									<?php }
+								} else {
+									echo "该品牌暂无商品";
+								}
                             ?>
                         <?php } ?>
 					</ul>
