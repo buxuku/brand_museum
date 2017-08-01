@@ -57,7 +57,7 @@ if(count($goodsList)==0){
 		<header id="header" class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left
 				gaia-action-back"></a>
-			<h1 class="mui-title"><?php echo $brand_name ?></h1>
+			<h1 class="mui-title"><?php echo urldecode($brand_name) ?></h1>
 		</header>
 		<div class="mui-content gaia-brandDetail-content">
 			<?php foreach($goodsList as $value){
@@ -70,16 +70,13 @@ if(count($goodsList)==0){
 									break;
 								}
 							?>
-							<img src="<?php echo IMG_PREFIX.$img; ?>"/>
+							<img src="<?php echo IMG_PREFIX.getThumbImg($img,400); ?>"/>
 							<?php } ?>
 						</div>
 						<div class="mui-card-footer">
 							<p class="gaia-footer-title">
 								<span class="mui-badge gaia-footer-badge"><?php echo $value['brand_name'] ?></span>
 								<?php echo $value['name'] ?></p>
-							<div class="mui-row gaia-footer-prices">
-								<div class="mui-col-xs-4 price1">直营价:￥<?php echo round($value['price'],2) ?></div>
-							</div>
 						</div>
 					</a>
 				</div>

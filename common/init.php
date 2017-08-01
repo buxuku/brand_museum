@@ -22,3 +22,11 @@ for($i=0; $i<count($array); $i++)
 		$brand[$brand_name[0]]=array($brand_name[1]);
 	}
 }
+
+function getThumbImg($path,$size){
+	$size=$size?$size:400;
+	$imgInfo=pathinfo($path);
+	$imgext=$imgInfo['extension'];
+	$imgUrl=str_replace($imgext,$size.".".$imgext,$path);
+	return $imgUrl;
+}

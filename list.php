@@ -50,9 +50,9 @@ mysqli_query($conn,'set names utf8');
 									?>
 										<li class="mui-table-view-cell mui-indexed-list-item">
 												<div class="mui-card">
-													<a href="goods_list.php?brand_id=<?php echo $row['id'] ?>&brand_name=<?php echo $row['show_name'] ?>">
+													<a href="goods_list.php?brand_id=<?php echo $row['id'] ?>&brand_name=<?php echo urlencode($row['show_name']) ?>">
 														<div class="mui-card-content">
-															<img src="<?php echo IMG_PREFIX.$row['logo_path'] ?>"/>
+															<img src="<?php echo IMG_PREFIX.getThumbImg($row['logo_path'],400); ?>"/>
 														</div>
 														<div class="gaia-card-footer"><?php echo $row['show_name'] ?></div>
 													</a>
