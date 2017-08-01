@@ -22,7 +22,7 @@ function getStoreDivided($price,$settlement,$ratio){
 	return $storeDivided;
 }
 
-$sql="SELECT c.id, c.`name`, c.price, c.tag_price, c.ratio, c.settlement, pic.goods_pics, b.show_name FROM commodity AS c LEFT JOIN ( SELECT GROUP_CONCAT(p.path) AS goods_pics, p.commodity_id AS goods_id FROM goods_pictures AS p WHERE p.type = 'goods' GROUP BY p.commodity_id ) AS pic ON pic.goods_id = c.id LEFT JOIN brand AS b ON c.brand_id = b.id WHERE c.id IN (".$brandList[$brand_id].")";
+$sql="SELECT c.id, c.`name`, c.price,c.ratio, c.settlement, pic.goods_pics, b.show_name FROM commodity AS c LEFT JOIN ( SELECT GROUP_CONCAT(p.path) AS goods_pics, p.commodity_id AS goods_id FROM goods_pictures AS p WHERE p.type = 'goods' GROUP BY p.commodity_id ) AS pic ON pic.goods_id = c.id LEFT JOIN brand AS b ON c.brand_id = b.id WHERE c.id IN (".$brandList[$brand_id].")";
 $result = mysqli_query($conn,$sql);
 if(!$result){
 	die("未查询到相关数据!");
@@ -33,7 +33,6 @@ while($row = mysqli_fetch_array($result)){
 		"id"=>$row['id'],
 		"name"=>$row['name'],
 		"price"=>$row['price'],
-		"tag_price"=>$row['tag_price'],
 		"goods_pics"=>explode(",", $row['goods_pics']),
 		"StoreDivided"=>getStoreDivided($row['price'],$row['settlement'],$row['ratio']),
 		"brand_name"=>$row['show_name']
@@ -80,8 +79,6 @@ if(count($goodsList)==0){
 								<?php echo $value['name'] ?></p>
 							<div class="mui-row gaia-footer-prices">
 								<div class="mui-col-xs-4 price1">直营价:￥<?php echo round($value['price'],2) ?></div>
-								<div class="mui-col-xs-4 price2">利润:￥<?php echo round($value['StoreDivided'],2) ?></div>
-								<div class="mui-col-xs-4 price3">吊牌价:￥<?php echo round($value['tag_price'],2) ?></div>
 							</div>
 						</div>
 					</a>
