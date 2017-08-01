@@ -27,7 +27,7 @@ mysqli_query($conn,'set names utf8');
 					<?php
                         foreach($brand as $key=>$value){
                     ?>
-                        <a><?php echo $key ?>
+                        <a><?php echo $key ?></a>
                     <?php } ?>
 				</div>
 				<div class="mui-indexed-list-alert"></div>
@@ -41,7 +41,7 @@ mysqli_query($conn,'set names utf8');
                             <?php
                                 $brandGruop = implode(",", $value);
 								if(!$brandGruop){
-									die("该品牌下暂无商品！");
+									continue;
 								}
                                 $sql ="select id,logo_path,show_name from brand where 1 and id IN (".$brandGruop.")";
                                 $result = mysqli_query($conn,$sql);
