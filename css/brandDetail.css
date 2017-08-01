@@ -24,6 +24,7 @@
 }
 .gaia-brandDetail-content .mui-card-content img{
 	margin: 0px 2px;
+	visibility: hidden;
 }
 .gaia-brandDetail-content .mui-card-footer:before{
 	height: 0;
