@@ -19,8 +19,17 @@ mui.ready(function() {
 			
 			var withoutSearchHeight = (listHeight- searchHeight) + 'px';
 			inner.style.height = withoutSearchHeight;
-			var barItemHeight = ((listHeight- searchHeight - 140)/26) + 'px';
-			bar.style.height = ((listHeight- searchHeight - 140)/26*barItem.length+40)+'px';
+			var barItemHeight;
+			var responseBarItemHeight=(listHeight- searchHeight - 140)/26;
+			if(responseBarItemHeight<20){
+				barItemHeightNum=20;
+				barItemHeight=barItemHeightNum+'px';
+				bar.style.height = (barItemHeightNum*barItem.length+40)+'px';
+			}else{
+				barItemHeight = responseBarItemHeight + 'px';
+				bar.style.height = (responseBarItemHeight*barItem.length+40)+'px';
+			}
+
 			/*console.log(bar);*/
 			barItem.forEach(function(item) {
 				item.style.height = barItemHeight;
