@@ -1,7 +1,6 @@
 ﻿<?php
 require("common/init.php");
 $brand_id = intval($_GET['brand_id']);
-$brand_name = $_GET['brand_name'];
 if(!$brand_id){
 	die("brand_id非法");
 }
@@ -25,7 +24,7 @@ function getStoreDivided($price,$settlement,$ratio){
 $sql="SELECT c.id, c.`name`, c.price,c.ratio, c.settlement, pic.goods_pics, b.show_name FROM commodity AS c LEFT JOIN ( SELECT GROUP_CONCAT(p.path) AS goods_pics, p.commodity_id AS goods_id FROM goods_pictures AS p WHERE p.type = 'goods' GROUP BY p.commodity_id ) AS pic ON pic.goods_id = c.id LEFT JOIN brand AS b ON c.brand_id = b.id WHERE c.id IN (".$brandList[$brand_id].")";
 $result = mysqli_query($conn,$sql);
 if(!$result){
-	die("未查询到相关数据!");
+	die("该品牌下暂无商品!");
 }
 $goodsList=array();
 while($row = mysqli_fetch_array($result)){
@@ -39,7 +38,14 @@ while($row = mysqli_fetch_array($result)){
 	);
 }
 if(count($goodsList)==0){
-	die("暂无数据！");
+	die("该品牌下暂无商品！");
+}
+$sql="SELECT show_name from brand WHERE id=".$brand_id;
+$result = mysqli_query($conn,$sql);
+if($result){
+	$row=mysqli_fetch_assoc($result);
+}else{
+	$row['show_name']="";
 }
 ?>
 <!DOCTYPE html>
@@ -47,7 +53,7 @@ if(count($goodsList)==0){
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title><?php echo $brand_name ?></title>
+		<title><?php echo $row['show_name'] ?></title>
 		<link rel="icon" type="image/ico" href="img/favicon.ico"/>
 		<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/common.css"/>
@@ -57,7 +63,7 @@ if(count($goodsList)==0){
 		<header id="header" class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left
 				gaia-action-back"></a>
-			<h1 class="mui-title"><?php echo urldecode($brand_name) ?></h1>
+			<h1 class="mui-title"><?php echo $row['show_name'] ?></h1>
 		</header>
 		<div class="mui-content gaia-brandDetail-content">
 			<?php foreach($goodsList as $value){
