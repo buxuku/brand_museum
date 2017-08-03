@@ -18,8 +18,13 @@
 	line-height: 0px;
 	overflow: hidden;
 }
+.gaia-brandDetail-content .gaia-card-img-box{
+	display: inline-block;
+	overflow: hidden;
+}
 .gaia-brandDetail-content .mui-card-content img{
 	margin: 0px 2px;
+	visibility: hidden;
 }
 .gaia-brandDetail-content .mui-card-footer:before{
 	height: 0;
@@ -54,6 +59,66 @@
 .gaia-footer-prices .price3{
 	text-align: right;
 }
+.ad{
+	position: fixed;
+	width: 100%;
+	background-color: #FFFFFF;
+	border-top: 1px solid #E4E4E4;
+}
+.gaia-ad-close-box,
+.gaia-ad-logo-box{
+	text-align: center;
+}
+.gaia-ad-close:before{
+	font-weight: bold;
+	background-color: #E2E2E2;
+	border-radius: 100%;
+	color:white;
+}
+.gaia-ad-logo-box,
+.gaia-ad-logo,
+.gaia-ad-logo img{
+	height: 100%;
+}
+.gaia-ad-logo{
+	display: inline-block;
+	padding: 10%;
+	border: 1px solid #E4E4E4;
+	border-radius: 0.5em;
+}
+.gaia-ad-text{
+	display: inline-block;
+}
+.gaia-ad-text-title,
+.gaia-ad-text-p{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 1.4em;
+}
+.gaia-ad-text-p{
+	color:rgb(126,126,126);
+}
+.gaia-ad-download{
+	padding: 0.5em 1.5em;
+	border-radius: 0.5em;
+	background-color: #4184FF;
+}
+.gaia-ad-download a,
+.gaia-ad-download a:hover,
+.gaia-ad-download a:focus{
+	color:white;
+	cursor: pointer;
+}
+@media only screen and (min-width: 1200px){
+	.ad,
+	.gaia-ad-close:before{
+		font-size: 36px;
+	}
+	.gaia-ad-text-p{
+		font-size: 30px;
+	}
+}
 @media only screen and (min-width: 992px) {
 	.gaia-footer-badge,
 	.gaia-footer-title{
@@ -65,6 +130,17 @@
 	.gaia-footer-prices{
 		padding:10px 0px;
 		font-size: 16px;
+	}
+	.ad,
+	.gaia-ad-close:before{
+		font-size: 32px;
+	}
+	.gaia-ad-text-title,
+	.gaia-ad-text-p{
+		line-height: 1.8em;
+	}
+	.gaia-ad-text-p{
+		font-size: 26px;
 	}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -79,6 +155,13 @@
 		padding:5px 0px;
 		font-size: 14px;
 	}
+	.ad,
+	.gaia-ad-close:before{
+		font-size: 28px;
+	}
+	.gaia-ad-text-p{
+		font-size: 22px;
+	}
 }
 @media only screen and (min-width: 360px) and (max-width: 767px) {
 	.gaia-footer-badge,
@@ -90,6 +173,33 @@
 	}
 	.gaia-footer-prices{
 		padding:2px 0px 0px;
+		font-size: 12px;
+	}
+}
+@media only screen and (min-width: 640px) and (max-width: 767px) {
+	.ad,
+	.gaia-ad-close:before{
+		font-size: 22px;
+	}
+	.gaia-ad-text-p{
+		font-size: 16px;
+	}
+}
+@media only screen and (max-width: 639px) {
+	.ad,
+	.gaia-ad-close:before{
+		font-size: 18px;
+	}
+	.gaia-ad-text-p{
+		font-size: 14px;
+	}
+}
+@media only screen and (max-width: 420px) {
+	.ad,
+	.gaia-ad-close:before{
+		font-size: 14px;
+	}
+	.gaia-ad-text-p{
 		font-size: 12px;
 	}
 }

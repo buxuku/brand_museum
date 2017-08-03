@@ -19,8 +19,17 @@ mui.ready(function() {
 			
 			var withoutSearchHeight = (listHeight- searchHeight) + 'px';
 			inner.style.height = withoutSearchHeight;
-			bar.style.height = (listHeight- searchHeight - 100)+'px';
-			var barItemHeight = ((listHeight- searchHeight - 140) / barItem.length) + 'px';
+			var barItemHeight;
+			var responseBarItemHeight=(listHeight- searchHeight - 140)/26;
+			if(responseBarItemHeight<20){
+				barItemHeightNum=20;
+				barItemHeight=barItemHeightNum+'px';
+				bar.style.height = (barItemHeightNum*barItem.length+40)+'px';
+			}else{
+				barItemHeight = responseBarItemHeight + 'px';
+				bar.style.height = (responseBarItemHeight*barItem.length+40)+'px';
+			}
+
 			/*console.log(bar);*/
 			barItem.forEach(function(item) {
 				item.style.height = barItemHeight;
@@ -38,6 +47,7 @@ mui.ready(function() {
 			/*设置img外框大小和img大小*/
 			var cardContent=document.querySelectorAll(".gaia-table-view .mui-card-content");
 			cardContent.forEach(function(item){
+				item.style.width=(document.body.offsetWidth-barWidth)/20*6+'px';
 				item.style.height=item.offsetWidth+'px';
 			});
 			var cardImg=document.querySelectorAll(".gaia-table-view .mui-card-content img");
@@ -47,15 +57,18 @@ mui.ready(function() {
 				var img = new Image();
 				// 改变图片的src
 				img.src = item.getAttribute('src');
+				// 定时执行获取宽高
 				var check = function(){
 					if(img.width!=0){
 						item.style.marginTop=(-(item.offsetWidth/img.width*img.height-item.offsetWidth)/2)+'px';
+						item.style.visibility="visible";
 					}
 				};
 				var set = setInterval(check,40);
 				// 加载完成获取宽高
 				img.onload = function(){
 				    item.style.marginTop=(-(item.offsetWidth/img.width*img.height-item.offsetWidth)/2)+'px';
+				    item.style.visibility="visible";
 				    // 取消定时获取宽高
 				    clearInterval(set);
 				};

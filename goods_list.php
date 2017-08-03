@@ -69,14 +69,16 @@ if($result){
 			<?php foreach($goodsList as $value){
 			?>
 				<div class="mui-card">
-					<a href="gaia://goods/<?php echo $value['id'] ?>">
+					<a href="gaiastore://goods?id=<?php echo $value['id'] ?>">
 						<div class="mui-card-content">
 							<?php foreach($value['goods_pics'] as $key=>$img){
 								if($key==3){
 									break;
 								}
 							?>
-							<img src="<?php echo IMG_PREFIX.getThumbImg($img,400); ?>"/>
+							<div class="gaia-card-img-box">
+								<img src="<?php echo IMG_PREFIX.getThumbImg($img,400); ?>"/>
+							</div>
 							<?php } ?>
 						</div>
 						<div class="mui-card-footer">
@@ -90,7 +92,31 @@ if($result){
 				}
 			?>
 		</div>
+		<div class="ad mui-row">
+			<div class="mui-col-xs-1 gaia-ad-close-box">
+				<span class="mui-icon mui-icon-closeempty gaia-ad-close"></span>
+			</div>
+			<div class="mui-col-xs-2 gaia-ad-logo-box">
+				<span class="gaia-ad-logo">
+					<img src="img/ad-logo.png"/>
+				</span>
+			</div>
+			<ul class="gaia-ad-text mui-col-xs-6">
+				<li class="gaia-ad-text-title">GAIA店铺端</li>
+				<li class="gaia-ad-text-p">时尚前沿，进货免费！</li>
+			</ul>
+			<div class="mui-col-xs-3 gaia-ad-download-box">
+				<span class="gaia-ad-download">
+					<a href="https://store.gaiasys.cn/api/v1/h5/scanDownload">下载</a>
+				</span>
+			</div>
+		</div>
 		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/brandDetail.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		    document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1262566772'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol
+		            + "s13.cnzz.com/z_stat.php%3Fid%3D1262566772' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 	</body>
 </html>
