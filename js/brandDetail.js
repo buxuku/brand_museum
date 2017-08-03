@@ -23,12 +23,14 @@ mui.ready(function() {
 				var check = function(){
 					if(img.width!=0){
 						item.style.marginTop=(-(item.offsetWidth/img.width*img.height-item.offsetWidth)/2)+'px';
+						item.style.visibility="visible";
 					}
 				};
 				var set = setInterval(check,40);
 				// 加载完成获取宽高
 				img.onload = function(){
 				    item.style.marginTop=(-(item.offsetWidth/img.width*img.height-item.offsetWidth)/2)+'px';
+				    item.style.visibility="visible";
 				    // 取消定时获取宽高
 				    clearInterval(set);
 				};
