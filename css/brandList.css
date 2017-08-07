@@ -23,7 +23,8 @@ a:visited{
 	color:#515151;
 }
 .gaia-indexed-list-search .mui-placeholder .mui-icon{
-	float: right;
+	position: absolute;
+	right: 0;
 	padding: 12px 14px;
 	color: black;
     font-weight: bold;
@@ -53,7 +54,7 @@ a:visited{
 }
 .gaia-indexed-list-search input[type=search]{
 	height: 44px;
-	padding-left: 60px;
+	padding:0px 44px 0px 60px;
 }
 /*索引条*/
 .gaia-indexed-list-bar,
