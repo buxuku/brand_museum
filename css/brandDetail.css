@@ -1,6 +1,11 @@
-.gaia-action-back,
-.gaia-icon-shopping{
+.mui-bar-nav .gaia-action-back{
 	color:#515151;
+	font-size: 17px;
+	line-height: 27px;
+	height: 44px;
+}
+gaia-action-back:before{
+	font-size: 20px;
 }
 .mui-icon.gaia-icon-shopping{
 	padding: 12px 10px;
