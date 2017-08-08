@@ -16,8 +16,6 @@ mysqli_query($conn,'set names utf8');
 	</head>
 	<body>
 		<div class="mui-content">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left 
-				gaia-action-back"></a>
 			<div id='list' class="mui-indexed-list">
 				<div class="mui-indexed-list-search mui-input-row mui-search gaia-indexed-list-search">
 					<input type="search" class="mui-input-clear mui-indexed-list-search-input" 

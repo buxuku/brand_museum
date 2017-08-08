@@ -62,7 +62,7 @@ if($result){
 	<body>
 		<header id="header" class="mui-bar mui-bar-nav">
 			<a class="mui-icon mui-icon-left-nav mui-pull-left
-				gaia-action-back" href="../list.php"></a>
+				gaia-action-back" href="list.php"></a>
 			<h1 class="mui-title"><?php echo $row['show_name'] ?></h1>
 		</header>
 		<div class="mui-content gaia-brandDetail-content">
