@@ -22,35 +22,16 @@ a:visited{
 	line-height: 44px;
 	color:#515151;
 }
-.gaia-indexed-list-search .mui-placeholder .mui-icon{
-	position: absolute;
-	right: 0;
-	padding: 12px 14px;
+.gaia-indexed-list-search .mui-placeholder .mui-icon,
+.gaia-indexed-list-search.mui-active:before{
 	color: black;
     font-weight: bold;
+}
+.gaia-indexed-list-search.mui-active:before{
+	padding: 0px 7px;
 }
 .gaia-indexed-list-search .mui-icon.mui-icon-clear{
 	display: none;
-}
-.gaia-indexed-list-search.mui-active{
-	position: relative;
-}
-.gaia-indexed-list-search.mui-active:before{
-	position: absolute;
-	display: inline-block;
-	left: auto;
-	right: 14px;
-	color: black;
-    font-weight: bold;
-}
-.gaia-action-back{
-	position: absolute;
-	z-index: 16;
-	padding: 10px 10px;
-	color: #515151;
-}
-.gaia-action-back:active{
-	color:#898989;
 }
 .gaia-indexed-list-search input[type=search]{
 	height: 44px;

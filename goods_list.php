@@ -61,8 +61,8 @@ if($result){
 	</head>
 	<body>
 		<header id="header" class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left
-				gaia-action-back"></a>
+			<a class="mui-icon mui-icon-left-nav mui-pull-left
+				gaia-action-back" href="../list.php"></a>
 			<h1 class="mui-title"><?php echo $row['show_name'] ?></h1>
 		</header>
 		<div class="mui-content gaia-brandDetail-content">
@@ -97,13 +97,11 @@ if($result){
 				<span class="mui-icon mui-icon-closeempty gaia-ad-close"></span>
 			</div>
 			<div class="mui-col-xs-2 gaia-ad-logo-box">
-				<span class="gaia-ad-logo">
 					<img src="img/ad-logo.png"/>
-				</span>
 			</div>
 			<ul class="gaia-ad-text mui-col-xs-6">
 				<li class="gaia-ad-text-title">GAIA店铺端</li>
-				<li class="gaia-ad-text-p">时尚前沿，进货免费！</li>
+				<li class="gaia-ad-text-p">帮门店拿到最适销的货！</li>
 			</ul>
 			<div class="mui-col-xs-3 gaia-ad-download-box">
 				<span class="gaia-ad-download">

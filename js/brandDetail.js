@@ -7,8 +7,11 @@ mui.ready(function() {
 	/*在设置位置初始位置：默认影藏*/
 	adDown();
 	/*这里添加判断，如果不是我们自己的添加广告*/
-	setTimeout(adUp,1000);/*页面加载完毕之后1s后广告出现*/
-	
+	var userAgent=navigator.userAgent;
+	if(userAgent.indexOf(';gaiaUserAgent')<0){
+		console.log("不是我们的app");
+		setTimeout(adUp,1000);/*页面加载完毕之后1s后广告出现*/
+	}
 	/*点击关闭ad隐藏*/
 	adClose.onclick=adDown;
 	
