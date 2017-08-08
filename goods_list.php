@@ -82,7 +82,6 @@ if($result){
 						</div>
 						<div class="mui-card-footer">
 							<p class="gaia-footer-title">
-								<span class="mui-badge gaia-footer-badge"><?php echo $value['brand_name'] ?></span>
 								<?php echo $value['name'] ?></p>
 						</div>
 					</a>
