@@ -76,12 +76,7 @@
 	border-radius: 100%;
 	color:white;
 }
-.gaia-ad-logo-box,
 .gaia-ad-logo-box img{
-	height: 100%;
-}
-.gaia-ad-logo-box img{
-	padding: 10%;
 	border: 1px solid #E4E4E4;
 	border-radius: 0.5em;
 }

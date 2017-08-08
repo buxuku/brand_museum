@@ -8,10 +8,11 @@ mui.ready(function() {
 	adDown();
 	/*这里添加判断，如果不是我们自己的添加广告*/
 	var userAgent=navigator.userAgent;
-	if(userAgent.indexOf(';gaiaUserAgent')<0){
-		console.log("不是我们的app");
+	if(userAgent.indexOf('gaiaUserAgent')<0){
+		//alert(userAgent);
 		setTimeout(adUp,1000);/*页面加载完毕之后1s后广告出现*/
 	}
+	//alert(userAgent);
 	/*点击关闭ad隐藏*/
 	adClose.onclick=adDown;
 	
@@ -54,12 +55,17 @@ mui.ready(function() {
 		ad.style.padding=ad.offsetWidth/200*3+'px';
 		/*广告close*/
 		var adClose=document.querySelector(".gaia-ad-close-box");
+		var adLogo=document.querySelector(".gaia-ad-logo-box");
+		var adLogoImg=document.querySelector(".gaia-ad-logo-box img");
 		var adDownload=document.querySelector(".gaia-ad-download-box");
 		var adText=document.querySelector(".gaia-ad-text");
 		
 		var adLineheight=ad.offsetHeight-ad.offsetWidth/200*6;
 		
 		adClose.style.lineHeight=adLineheight+'px';
+		adLogo.style.height=adLineheight+'px';
+		adLogoImg.style.height=adLineheight+'px';
+		adLogoImg.style.padding=adLineheight/10+'px';
 		adDownload.style.lineHeight=adLineheight+'px';
 		adText.style.paddingTop=(adLineheight-adText.offsetHeight)/2+'px';
 	}
