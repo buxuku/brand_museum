@@ -55,15 +55,23 @@ mui.ready(function() {
 					var img = new Image();
 					// 改变图片的src
 					img.src = cardImg.getAttribute('src');
-					/**/
+					
 					img.style.width=cardContent.offsetWidth+'px';
 					// 定时执行获取宽高
 					var check = function(){
-						if(img.width!=0){
+						console.log('正在加载'+img.width);
+						if(img.width==0){
+							img.src='img/default_img.jpg';
+							img.style.visibility="visible";
+							cardContent.innerHTML='';
+							cardContent.appendChild(img);
+							console.log('加载不成功'+img.src);
+						}else{
 							img.style.marginTop=(-(cardContent.offsetWidth/img.width*img.height-cardContent.offsetWidth)/2)+'px';
 							img.style.visibility="visible";
 							cardContent.innerHTML='';
 							cardContent.appendChild(img);
+							console.log('加载成功'+img.src);
 						}
 					};
 					var set = setInterval(check(),40);
@@ -75,6 +83,7 @@ mui.ready(function() {
 						cardContent.appendChild(img);
 					    // 取消定时获取宽高
 					    clearInterval(set);
+					    console.log('加载完毕'+img.src);
 					};
 			}
 	}

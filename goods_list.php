@@ -76,7 +76,7 @@ if($result){
 								}
 							?>
 							<div class="gaia-card-img-box">
-								<img src="<?php echo $img?IMG_PREFIX.getThumbImg($img,400):'img/default_img.jpg'; ?>" onerror="onerror=null;src='img/default_img.jpg'"/>
+								<img src="<?php echo $img?IMG_PREFIX.getThumbImg($img,400):'img/default_img.jpg'; ?>"/>
 							</div>
 							<?php } ?>
 						</div>
@@ -95,7 +95,7 @@ if($result){
 				<span class="mui-icon mui-icon-closeempty gaia-ad-close"></span>
 			</div>
 			<div class="mui-col-xs-2 gaia-ad-logo-box">
-					<img src="img/ad-logo.png"/>
+					<img src="img/logo.png"/>
 			</div>
 			<ul class="gaia-ad-text mui-col-xs-6">
 				<li class="gaia-ad-text-title">GAIA店铺端</li>

@@ -9,10 +9,10 @@ mui.ready(function() {
 	/*这里添加判断，如果不是我们自己的添加广告*/
 	var userAgent=navigator.userAgent;
 	if(userAgent.indexOf('gaiaUserAgent')<0){
-		//alert(userAgent);
+	/*	alert(userAgent);*/
 		setTimeout(adUp,1000);/*页面加载完毕之后1s后广告出现*/
 	}
-	//alert(userAgent);
+	/*alert(userAgent);*/
 	/*点击关闭ad隐藏*/
 	adClose.onclick=adDown;
 	
@@ -35,19 +35,25 @@ mui.ready(function() {
 					img.style.visibility="visible";
 					goodsImgBox[i].innerHTML='';
 					goodsImgBox[i].appendChild(img);
+					console.log('正在加载'+img.src+''+img.offsetHeight);
 				}
 			};
 			var set = setInterval(check(i),40);
 			// 加载完成获取宽高
 			function onload(i){
+				if(img.offsetHeight==0){
+					img.src='img/default_img.jpg';
+				}
 				img.style.marginTop=(-(bodyWidth/img.width*img.height-bodyWidth)/2)+'px';
 				img.style.visibility="visible";
 				goodsImgBox[i].innerHTML='';
 				goodsImgBox[i].appendChild(img);
 				// 取消定时获取宽高
 				clearInterval(set);
+				console.log('加载成功'+img.src+img.offsetHeight);
 			};
 			img.onload=onload(i);
+			
 		}
 		
 		/*广告*/
