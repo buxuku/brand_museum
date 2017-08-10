@@ -2,10 +2,11 @@ mui.init();
 mui.ready(function() {
 	var ad=document.querySelector(".ad");
 	var adClose=document.querySelector(".gaia-ad-close");
-	/*在设置位置初始位置：默认影藏*/
-	adDown();
+	
 	/*先设定初值宽高*/
 	setSize();
+	/*在设置位置初始位置：默认影藏*/
+	ad.style.bottom=-ad.offsetHeight+'px';
 	/*这里添加判断，如果不是我们自己的添加广告*/
 	var userAgent=navigator.userAgent;
 	if(userAgent.indexOf('gaiaUserAgent')<0){

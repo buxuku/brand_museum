@@ -78,7 +78,9 @@
 	width: 100%;
 	background-color: #FFFFFF;
 	border-top: 1px solid #E4E4E4;
+	bottom: -100%;
 }
+
 .gaia-ad-close-box,
 .gaia-ad-logo-box{
 	text-align: center;
