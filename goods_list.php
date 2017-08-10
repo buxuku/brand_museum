@@ -1,7 +1,7 @@
 ﻿<?php
 require("common/init.php");
 $brand_id = intval($_GET['brand_id']);
-if(!$brand_id){
+if(!$brand_id || !isset($brandList[$brand_id])){
 	die("brand_id非法");
 }
 $conn=mysqli_connect($mysql_server_name,$mysql_username,$mysql_password,$mysql_database,$mysql_port) or die("error connecting");
@@ -20,7 +20,6 @@ function getStoreDivided($price,$settlement,$ratio){
 	}
 	return $storeDivided;
 }
-
 $sql="SELECT c.id, c.`name`, c.price,c.ratio, c.settlement, pic.goods_pics, b.show_name FROM commodity AS c LEFT JOIN ( SELECT GROUP_CONCAT(p.path) AS goods_pics, p.commodity_id AS goods_id FROM goods_pictures AS p WHERE p.type = 'goods' GROUP BY p.commodity_id ) AS pic ON pic.goods_id = c.id LEFT JOIN brand AS b ON c.brand_id = b.id WHERE c.id IN (".$brandList[$brand_id].")";
 $result = mysqli_query($conn,$sql);
 if(!$result){
