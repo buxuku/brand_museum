@@ -51,7 +51,8 @@ mysqli_query($conn,'set names utf8');
 													<a href="goods_list.php?brand_id=<?php echo $row['id'] ?>&brand_name=<?php echo urlencode($row['show_name']) ?>">
 														<div class="mui-card-content">
 															<span class="vertical"></span>
-															<img src="<?php echo $row['logo_path']?IMG_PREFIX.getThumbImg($row['logo_path'],400):'img/default_img.jpg'; ?>"/>
+															<img src="<?php echo $row['logo_path']?IMG_PREFIX.getThumbImg($row['logo_path'],400):'img/default_img.jpg'; ?>"
+																onerror="onerror=null;src='img/default_img.jpg'"/>
 														</div>
 														<div class="gaia-card-footer"><?php echo $row['show_name'] ?></div>
 													</a>
