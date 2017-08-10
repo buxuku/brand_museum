@@ -21,38 +21,17 @@ mui.ready(function() {
 		var goodsImgBox=document.querySelectorAll(".gaia-brandDetail-content .gaia-card-img-box");
 		var imgBoxLen=goodsImgBox.length;
 		for(var i=0;i<imgBoxLen;i++){
+			/*设置img外框大小*/
 			goodsImgBox[i].style.width=bodyWidth+'px';
 			goodsImgBox[i].style.height=bodyWidth+'px';
-			
+			/*垂直居中*/
+			var vertical=goodsImgBox[i].getElementsByClassName('vertical')[0];
+			vertical.style.height=innerWidth/20*6+'px';
+			/*设置img大小*/
 			var goodsImg=goodsImgBox[i].getElementsByTagName('img')[0];
-			var img = new Image();
-			// 改变图片的src
-			img.src = goodsImg.getAttribute('src');
-			img.style.width=bodyWidth+'px';
-			var check = function(i){
-				if(img.width!=0){
-					img.style.marginTop=(-(bodyWidth/img.width*img.height-bodyWidth)/2)+'px';
-					img.style.visibility="visible";
-					goodsImgBox[i].innerHTML='';
-					goodsImgBox[i].appendChild(img);
-					console.log('正在加载'+img.src+''+img.offsetHeight);
-				}
-			};
-			var set = setInterval(check(i),40);
-			// 加载完成获取宽高
-			function onload(i){
-				if(img.offsetHeight==0){
-					img.src='img/default_img.jpg';
-				}
-				img.style.marginTop=(-(bodyWidth/img.width*img.height-bodyWidth)/2)+'px';
-				img.style.visibility="visible";
-				goodsImgBox[i].innerHTML='';
-				goodsImgBox[i].appendChild(img);
-				// 取消定时获取宽高
-				clearInterval(set);
-				console.log('加载成功'+img.src+img.offsetHeight);
-			};
-			img.onload=onload(i);
+			goodsImg.style.width=(bodyWidth-1)+'px';
+			goodsImg.style.visibility="visible";
+			
 			
 		}
 		
