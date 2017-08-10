@@ -48,43 +48,14 @@ mui.ready(function() {
 				var cardContent=cardItem[i].getElementsByClassName('mui-card-content')[0];
 				cardContent.style.width=innerWidth/20*6+'px';
 				cardContent.style.height=innerWidth/20*6+'px';
-				
+				/*垂直居中*/
+				var vertical=cardContent.getElementsByClassName('vertical')[0];
+				vertical.style.height=innerWidth/20*6+'px';
 				/*设置img大小*/
 				var cardImg=cardContent.getElementsByTagName('img')[0];
-					// 创建对象
-					var img = new Image();
-					// 改变图片的src
-					img.src = cardImg.getAttribute('src');
-					
-					img.style.width=cardContent.offsetWidth+'px';
-					// 定时执行获取宽高
-					var check = function(){
-						console.log('正在加载'+img.width);
-						if(img.width==0){
-							img.src='img/default_img.jpg';
-							img.style.visibility="visible";
-							cardContent.innerHTML='';
-							cardContent.appendChild(img);
-							console.log('加载不成功'+img.src);
-						}else{
-							img.style.marginTop=(-(cardContent.offsetWidth/img.width*img.height-cardContent.offsetWidth)/2)+'px';
-							img.style.visibility="visible";
-							cardContent.innerHTML='';
-							cardContent.appendChild(img);
-							console.log('加载成功'+img.src);
-						}
-					};
-					var set = setInterval(check(),40);
-					// 加载完成获取宽高
-					img.onload =function(){
-					    img.style.marginTop=(-(cardContent.offsetWidth/img.width*img.height-cardContent.offsetWidth)/2)+'px';
-						img.style.visibility="visible";
-						cardContent.innerHTML='';
-						cardContent.appendChild(img);
-					    // 取消定时获取宽高
-					    clearInterval(set);
-					    console.log('加载完毕'+img.src);
-					};
+				cardImg.style.width=(innerWidth/20*6-0.1)+'px';
+				cardImg.style.visibility="visible";
+				
 			}
 	}
 	window.onresize=listHeight;
