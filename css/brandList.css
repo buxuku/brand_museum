@@ -83,10 +83,16 @@ a:visited{
 .gaia-table-view .mui-card-content{
 	line-height: 0;
 	overflow: hidden;
+	font-size: 0px;
+}
+.vertical{
+	display: inline-block;
+	width: 0.1px;
+	vertical-align: middle;
 }
 .gaia-table-view .mui-card-content img{
-	width: 100%;
 	visibility: hidden;
+	vertical-align: middle;
 }
 .gaia-table-view .gaia-card-footer{
 	padding: 0;
