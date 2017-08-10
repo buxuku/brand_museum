@@ -31,8 +31,13 @@
 	overflow: hidden;
 	margin: 0px 2px;
 }
+.vertical{
+	display: inline-block;
+	width: 0.1px;
+	vertical-align: middle;
+}
 .gaia-brandDetail-content .mui-card-content img{
-	width: 100%;
+	vertical-align: middle;
 	visibility: hidden;
 }
 .gaia-brandDetail-content .mui-card-footer:before{
