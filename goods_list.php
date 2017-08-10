@@ -77,7 +77,7 @@ if($result){
 							<div class="gaia-card-img-box">
 								<span class="vertical"></span>
 								<img src="<?php echo $img?IMG_PREFIX.getThumbImg($img,400):'img/default_img.jpg'; ?>"
-									onerror="onerror=null;src='img/default_img.jpg'"/>
+									onerror="onerror=null;src='img/default_img_2.jpg'"/>
 							</div>
 							<?php } ?>
 						</div>
