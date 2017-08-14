@@ -56,6 +56,7 @@ if($result){
 		<title><?php echo $row['show_name'] ?></title>
 		<link rel="icon" type="image/ico" href="img/favicon.ico"/>
 		<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mui.indexedlist.css"/>
 		<link rel="stylesheet" type="text/css" href="css/common.css"/>
 		<link rel="stylesheet" type="text/css" href="css/brandDetail.css"/>
 	</head>
@@ -64,9 +65,19 @@ if($result){
 			<a class="mui-icon mui-icon-left-nav mui-pull-left
 				gaia-action-back" href="list.php">&nbsp;品牌馆</a>
 		</header>
-		<div class="mui-content gaia-brandDetail-content">
+		<div id='detailList' class="mui-indexed-list">
+		<div class="mui-indexed-list-search mui-input-row mui-search gaia-indexed-list-search">
+				<input type="search" class="mui-input-clear mui-indexed-list-search-input" 
+					placeholder="请通过货号选择商品下单进货！">
+		</div>
+		<div class="mui-indexed-list-bar gaia-indexed-detail-bar"></div>
+		<div class="mui-indexed-list-alert"></div>
+		<div class="mui-content gaia-brandDetail-content mui-indexed-list-inner">
+			<div class="mui-indexed-list-empty-alert">没有数据</div>
+			<ul class="mui-table-view">
 			<?php foreach($goodsList as $value){
 			?>
+			<li class="mui-table-view-cell mui-indexed-list-item gaia-indexed-detail-item">
 				<div class="mui-card">
 					<a href="gaiastore://goods?id=<?php echo $value['id'] ?>">
 						<div class="mui-card-content">
@@ -91,6 +102,8 @@ if($result){
 			<?php
 				}
 			?>
+			</ul>	
+			</div>
 		</div>
 		<div class="ad mui-row">
 			<div class="mui-col-xs-1 gaia-ad-close-box">
@@ -110,6 +123,7 @@ if($result){
 			</div>
 		</div>
 		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.indexedlist.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/brandDetail.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 		    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");

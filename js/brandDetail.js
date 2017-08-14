@@ -1,8 +1,10 @@
 mui.init();
 mui.ready(function() {
+	//create
+	window.indexedList = new mui.IndexedList(detailList);
+	
 	var ad=document.querySelector(".ad");
 	var adClose=document.querySelector(".gaia-ad-close");
-	
 	/*先设定初值宽高*/
 	setSize();
 	/*在设置位置初始位置：默认影藏*/
@@ -18,6 +20,17 @@ mui.ready(function() {
 	adClose.onclick=adDown;
 	
 	function setSize(){
+		var detailList = document.getElementById('detailList');
+		detailList.style.height = document.body.offsetHeight+ 'px';
+		
+		/*设置整体*/
+		var detailListHeight=detailList.offsetHeight;
+		var searchHeight=document.querySelector('.gaia-indexed-list-search').offsetHeight;
+		var inner=document.querySelector('.mui-indexed-list-inner');
+			
+		var withoutSearchHeight = (detailListHeight- searchHeight) + 'px';
+		inner.style.height = withoutSearchHeight;
+		
 		var bodyWidth=(document.body.offsetWidth-38)/3;
 		var goodsImgBox=document.querySelectorAll(".gaia-brandDetail-content .gaia-card-img-box");
 		var imgBoxLen=goodsImgBox.length;
