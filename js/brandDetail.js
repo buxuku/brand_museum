@@ -20,8 +20,9 @@ mui.ready(function() {
 	adClose.onclick=adDown;
 	
 	function setSize(){
+		var headerHeight=document.querySelector("#header").offsetHeight;
 		var detailList = document.getElementById('detailList');
-		detailList.style.height = document.body.offsetHeight+ 'px';
+		detailList.style.height = (document.body.offsetHeight-headerHeight)+ 'px';
 		
 		/*设置整体*/
 		var detailListHeight=detailList.offsetHeight;
