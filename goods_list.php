@@ -131,6 +131,6 @@ if($result){
 		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/mui.indexedlist.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/brandDetail.js" type="text/javascript" charset="utf-8"></script>
-		<script src="https://s13.cnzz.com/z_stat.php?id=1262566772&web_id=1262566772" language="JavaScript"></script>
+		<script src="//s13.cnzz.com/z_stat.php?id=1262566772&web_id=1262566772" language="JavaScript"></script>
 	</body>
 </html>
