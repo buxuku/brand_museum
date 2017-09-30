@@ -13,6 +13,7 @@ mui.ready(function() {
 	var userAgent=navigator.userAgent;
 	if(userAgent.indexOf('gaiaUserAgent')<0){
 	/*	alert(userAgent);*/
+		document.querySelector("#header").style.display="block";
 		setTimeout(adUp,1000);/*页面加载完毕之后1s后广告出现*/
 	}
 	/*alert(userAgent);*/
