@@ -1,6 +1,6 @@
 <?php
-$mysql_server_name='192.168.1.17';
-$mysql_username='root';
-$mysql_password='86da06358I*';
+$mysql_server_name='192.168.1.138';
+$mysql_username='test_manager';
+$mysql_password='tstmger90';
 $mysql_database='retail';
 $mysql_port='3306';
