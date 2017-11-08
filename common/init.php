@@ -2,6 +2,10 @@
 require("db_config.php");
 define("IMG_PREFIX","//uploaded.gaiasys.cn/retail/images/");
 
+$url ="http://brand.com/data.json";
+$contents = file_get_contents($url);
+echo $contents;
+
 $conn=mysqli_connect($mysql_server_name,$mysql_username,$mysql_password,$mysql_database,$mysql_port) or die("error connecting");
 mysqli_query($conn,'set names utf8');
 
