@@ -6,24 +6,6 @@ $url ="http://brand.com/data.json";
 $contents = file_get_contents($url);
 $contents=json_decode($contents,true);
 
-
-
-$conn=mysqli_connect($mysql_server_name,$mysql_username,$mysql_password,$mysql_database,$mysql_port) or die("error connecting");
-mysqli_query($conn,'set names utf8');
-
-$sql ="select * from activity_description where activity_id=14";
-
-$result = mysqli_query($conn,$sql);
-if($result){
-	$array=array();
-	while($row = mysqli_fetch_array($result)){
-		if($row['name'] && $row['content']){
-			$array[]=$row['name'].",".$row['content'].",".$row['note'];
-		}
-	}
-}else{
-	die("没有查询到活动数据");
-}
 $brand = array();
 $brandList=array();
 
