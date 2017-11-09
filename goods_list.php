@@ -24,7 +24,7 @@ $ext_where="";
 if(!isset($brandList[$brand_id]) && $brand_id){
 	$ext_where=" c.status=1 and  b.id=".$brand_id;
 }else{
-	$ext_where=$brandList[$brand_id]?" c.id IN ($brandList[$brand_id]) ORDER BY locate(c.id,'$brandList[$brand_id]')":" c.status=1 and  b.id=".$brand_id;
+	$ext_where=$brandList[$brand_id]?" c.id IN (".implode(',',$brandList[$brand_id]).") ORDER BY locate(c.id,'".implode(',',$brandList[$brand_id])."')":" c.status=1 and  b.id=".$brand_id;
 }
 $sql="SELECT c.id,c.article_number, c.`name`, c.price,c.ratio, c.settlement, pic.goods_pics, b.show_name FROM commodity AS c LEFT JOIN ( SELECT GROUP_CONCAT(p.path) AS goods_pics, p.commodity_id AS goods_id FROM goods_pictures AS p WHERE p.type = 'goods' GROUP BY p.commodity_id ) AS pic ON pic.goods_id = c.id LEFT JOIN brand AS b ON c.brand_id = b.id WHERE ".$ext_where;
 $result = mysqli_query($conn,$sql);

@@ -6,9 +6,7 @@ $url ="http://brand.com/data.json";
 $contents = file_get_contents($url);
 $contents=json_decode($contents,true);
 
-for($i=0;$i<count($contents);$i++){
-	print_r($contents[$i]['goods']);
-}
+
 
 $conn=mysqli_connect($mysql_server_name,$mysql_username,$mysql_password,$mysql_database,$mysql_port) or die("error connecting");
 mysqli_query($conn,'set names utf8');
@@ -28,21 +26,17 @@ if($result){
 }
 $brand = array();
 $brandList=array();
-for($i=0; $i<count($array); $i++)
-{ 
-	$row=$array[$i];
-	$brand_name=explode(',', $row);
-	$brandIdList=explode(',', $row,3);
-	if(count($brandIdList)<2){
-		continue;
-	}
-	$brandList[intval($brand_name[1])]=count($brandIdList)>2?$brandIdList[2]:"";
-	if(isset($brand[$brand_name[0]])){
-		Array_push($brand[$brand_name[0]],$brand_name[1]);
+
+for($i=0;$i<count($contents);$i++){
+	$brand_name=$contents[$i]['brandLetter'];
+	$brandList[$contents[$i]['brandId']]=$contents[$i]['goods'];
+	if(isset($brand[$brand_name])){
+		Array_push($brand[$brand_name],$contents[$i]['brandId']);
 	}else{
-		$brand[$brand_name[0]]=array($brand_name[1]);
+		$brand[$brand_name]=array($contents[$i]['brandId']);
 	}
 }
+
 function getThumbImg($path,$size){
 	$size=$size?$size:400;
 	$imgInfo=pathinfo($path);
