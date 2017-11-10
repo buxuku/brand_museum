@@ -2,22 +2,13 @@
 require("db_config.php");
 define("IMG_PREFIX","//uploaded.gaiasys.cn/retail/images/");
 
-$url ="http://brand.com/data.json";
-$contents = file_get_contents($url);
-$contents=json_decode($contents,true);
+$rootUrl="http://192.168.1.18:8080/data/";
 
-$brand = array();
-$brandList=array();
-
-for($i=0;$i<count($contents);$i++){
-	$brand_name=$contents[$i]['brandLetter'];
-	$brandList[$contents[$i]['brandId']]=$contents[$i]['goods'];
-	if(isset($brand[$brand_name])){
-		Array_push($brand[$brand_name],$contents[$i]['brandId']);
-	}else{
-		$brand[$brand_name]=array($contents[$i]['brandId']);
-	}
-}
+$typeData=array(
+	"goodsRankOrderByDt" =>"上货时间",
+	"goodsRankOrderByPc" => "进货数量",
+	"goodsRankOrderBySc" => "销售数量"
+);
 
 function getThumbImg($path,$size){
 	$size=$size?$size:400;

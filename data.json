@@ -1,25 +1,5 @@
-[{
-    "brandId": 118,
-    "brandName": "安达特",
-    "brandLetter": "A",
-    "goods": [
-      132,111,102
-    ]
-  },
-  {
-    "brandId": 34,
-    "brandName": "阿殂",
-    "brandLetter": "A",
-    "goods": [
-      25
-    ]
-  },
-  {
-    "brandId": 64,
-    "brandName": "比",
-    "brandLetter": "C",
-    "goods": [
-      532,535,538
-    ]
-  }
+[1,
+  4,
+  7,
+  10
 ]
