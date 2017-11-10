@@ -1,18 +1,11 @@
 <?php
-require("common/config.php");
+require("common/common.php");
 $typeData=array(
 	"goodsRankOrderByDt" =>"上货时间",
 	"goodsRankOrderByPc" => "进货数量",
 	"goodsRankOrderBySc" => "销售数量"
 );
 
-function getThumbImg($path,$size){
-	$size=$size?$size:400;
-	$imgInfo=pathinfo($path);
-	$imgext=$imgInfo['extension'];
-	$imgUrl=str_replace($imgext,$size.".".$imgext,$path);
-	return $imgUrl;
-}
 $type = $_GET['type'];
 if( empty($type) || !isset($typeData[$type])){
 	die("统计类型错误");
