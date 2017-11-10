@@ -1,9 +1,9 @@
 <?php
 require("common/common.php");
 $typeData=array(
-	"goodsRankOrderByDt" =>"上货时间",
-	"goodsRankOrderByPc" => "进货数量",
-	"goodsRankOrderBySc" => "销售数量"
+	"goodsRankOrderByDt" => "最新发布",
+	"goodsRankOrderByPc" => "订货爆款",
+	"goodsRankOrderBySc" => "当季热卖"
 );
 
 $type = $_GET['type'];
