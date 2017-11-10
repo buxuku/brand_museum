@@ -1,5 +1,18 @@
 <?php
-require("common/init.php");
+require("common/config.php");
+$typeData=array(
+	"goodsRankOrderByDt" =>"上货时间",
+	"goodsRankOrderByPc" => "进货数量",
+	"goodsRankOrderBySc" => "销售数量"
+);
+
+function getThumbImg($path,$size){
+	$size=$size?$size:400;
+	$imgInfo=pathinfo($path);
+	$imgext=$imgInfo['extension'];
+	$imgUrl=str_replace($imgext,$size.".".$imgext,$path);
+	return $imgUrl;
+}
 $type = $_GET['type'];
 if( empty($type) || !isset($typeData[$type])){
 	die("统计类型错误");
@@ -25,7 +38,7 @@ if( empty($type) || !isset($typeData[$type])){
 		</header>
 <?php
 
-$url = "$rootUrl.$type";
+$url = DATA_ROOT.$type;
 $contents = file_get_contents($url);
 $contents=json_decode($contents,true);
 
