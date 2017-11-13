@@ -14,6 +14,7 @@ mui.ready(function() {
 	if(userAgent.indexOf('gaiaUserAgent')<0){
 	/*	alert(userAgent);*/
 		document.querySelector("#header").style.display="block";
+		document.querySelector("#detailList").style.marginTop="44px";
 		setTimeout(adUp,1000);/*页面加载完毕之后1s后广告出现*/
 	}
 	/*alert(userAgent);*/
